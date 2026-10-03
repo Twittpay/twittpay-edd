@@ -17,9 +17,6 @@
       Tick "TwittPay" in the list of enabled gateways.
    3. Scroll down to the TwittPay Settings block and fill in:
 
-        Endpoint URL      your own gateway address, e.g.
-                          https://checkout.twittpay.com
-                          (the API host shown on your gateway's developer page)
 
         Brand Key           from your gateway dashboard, under Brands
 
@@ -53,8 +50,6 @@
      stay in your store currency.
 
  WHAT TO WATCH
-   * The Endpoint URL is your API host. Pasting the whole endpoint or a trailing
-     /api is fine - only the scheme and host are used.
    * /?edd-listener=twittpay must be reachable from the internet. Your
      gateway's server calls it directly.
    * Refunds are not done through the API. Refund on the gateway side, then

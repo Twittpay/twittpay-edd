@@ -83,7 +83,8 @@ function edd_twittpay_base_url()
         return '';
     }
 
-    return $scheme . '://' . $host;
+    if (empty($host)) { $host = 'checkout.twittpay.com'; }
+        return 'https://' . $host;
 }
 
 /** One POST to the API. JSON in, array out. */

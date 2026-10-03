@@ -41,7 +41,7 @@ add_filter('edd_settings_gateways', function ($settings) {
         [
             'id'   => 'twittpay_api_url',
             'name' => __('Endpoint URL', 'edd-twittpay'),
-            'desc' => __('Your own gateway address, for example https://checkout.twittpay.com - the API host shown on your gateway\'s developer page.', 'edd-twittpay'),
+            'desc' => __('Optional. Leave empty to use the default checkout address (https://checkout.twittpay.com) - the API host shown on your gateway\'s developer page.', 'edd-twittpay'),
             'type' => 'text',
         ],
         [
@@ -80,11 +80,10 @@ function edd_twittpay_base_url()
     }
 
     if (empty($host)) {
-        return '';
+        $host = 'checkout.twittpay.com';
     }
 
-    if (empty($host)) { $host = 'checkout.twittpay.com'; }
-        return 'https://' . $host;
+    return 'https://' . $host;
 }
 
 /** One POST to the API. JSON in, array out. */
